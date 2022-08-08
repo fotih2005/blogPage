@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom"
 import styled from "styled-components"
 
 export const SiteMain = styled.main`
@@ -76,4 +77,14 @@ export const PagesBtn = styled.button`
     padding: 10px 13px;
     border: none;
     border-radius: 5px;
+`
+export const AddNewPost = styled(Link)`
+    display: inline-block;
+    margin-top: 30px;
+    text-decoration: none;
+    padding: 18px;
+    font-weight: bold;
+    border-radius: 10px;
+    color: #fff;
+    background-color: #000;
 `

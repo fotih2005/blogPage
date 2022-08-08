@@ -1,8 +1,7 @@
-import { useEffect } from "react";
 import { useDispatch } from "react-redux";
-import { Route, Routes } from "react-router-dom";
-import { useSelector } from "use-selector";
+import { Link, Route, Routes } from "react-router-dom";
 import CurrentPost from "./components/currentPost/currentPost";
+import AddPost from "./modules/addPost/addPost";
 import FilterCategories from "./modules/filterCategory/filterCategories.component";
 import Home from "./modules/home/home.component";
 import Login from "./modules/login/login";
@@ -10,13 +9,6 @@ import { getPosts } from "./store/reducer/postSlice";
 
 
 function App() {
-
-  useEffect(() => {
-    (function () {
-      const post = useSelector(state => state)
-    console.log(post);
-    })()
-  })
 
   const dispatch = useDispatch()
   dispatch(getPosts())
@@ -31,6 +23,7 @@ function App() {
           <Route path="*" element={<Home />} />
           <Route path="/category/:category" element={<FilterCategories />} />
           <Route path="/post/:post" element={<CurrentPost />} />
+          <Route path="/add" element={<AddPost />} />
         </Routes>
     </>
   );

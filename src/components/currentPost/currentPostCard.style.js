@@ -52,3 +52,12 @@ export const MoreTitle = styled.h3`
   line-height: 32px;
   color: #000000;
 `;
+
+export const Delete = styled.button`
+  padding: 16px;
+  border: none;
+  border-radius: 10px;
+  font-weight: bold;
+  color: #fff;
+  background-color: red;
+`

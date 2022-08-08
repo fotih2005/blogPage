@@ -1,7 +1,3 @@
-import { useEffect, useState } from "react";
-import { useDispatch } from "react-redux";
-import { useSelector } from "use-selector";
-import { getPost } from "../../store/reducer/inputSlice";
 import {
   HeaderLogoWrapper,
   HeaderWrapper,
@@ -14,17 +10,6 @@ import {
 import NavCardsRender from "./navCard/navCardRender";
 
 function Header() {
-  const dispatch = useDispatch()
-  
-  const [title, setTitle] = useState("")
-
-  
-  
-  function GetValue () {
-    dispatch(getPost(title))
-  }
-
-  GetValue()
   return (
     <>
       <SiteHeader>
@@ -57,7 +42,7 @@ function Header() {
             </SiteNav>
             <div>
               <form>
-              <SearchInput type="text" placeholder="Search" onChange={e => setTitle(e.target.value)}/>
+              <SearchInput type="text" placeholder="Search"/>
               <SearchIcon>
                 <svg
                   width={16}

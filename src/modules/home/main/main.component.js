@@ -1,6 +1,7 @@
-import PostCard from "../../../components/postCard/postCard.component";
+import { Link } from "react-router-dom";
 import PostCardRender from "../../../components/postCard/postCardRender";
 import {
+  AddNewPost,
   ArrowIcon,
   Explore,
   ExploreWrapper,
@@ -32,6 +33,7 @@ function Main() {
               <Explore>explore me</Explore>
               <ArrowIcon>&gt;</ArrowIcon>
             </ExploreWrapper>
+            <AddNewPost to={"/add"}>Add New Post</AddNewPost>
           </SiteMainContent>
           <SiteMainListWrapper>
             <ListTitle>Recent Posts</ListTitle>
