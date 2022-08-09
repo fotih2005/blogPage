@@ -17,7 +17,6 @@ function CurrentPostCard(props) {
   const param = useParams();
   console.log(param);
 
-  const token = localStorage.getItem("token");
   async function DeletePost () {
     let res = await fetch(
       `https://n36-blog.herokuapp.com/posts/${param.post}`,

@@ -1,5 +1,5 @@
 import GetDate from "../../utils/getDate";
-import { PostCategory, PostData, PostItem, PostItemDesc, PostItemHeader, PostItemLink, PostTime, TimeWrapper } from "./postCard.style";
+import { EditPost, PostCategory, PostData, PostItem, PostItemDesc, PostItemHeader, PostItemLink, PostTime, TimeWrapper } from "./postCard.style";
 
 function PostCard(props) {
 
@@ -25,6 +25,7 @@ function PostCard(props) {
               <path d="M10 5V10L12.5 12.5" stroke="#777777" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round" />
           </svg>
         </TimeWrapper>
+        <EditPost to={`edit/${props.id}`}>edit post</EditPost>
       </PostItem>
     </>
   );

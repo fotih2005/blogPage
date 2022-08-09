@@ -1,4 +1,3 @@
-import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import useFetch from "../../hooks/useFetch";
 import { Container } from "../../modules/filterCategory/filterCategories.style";
@@ -13,8 +12,7 @@ function CurrentPost() {
     <>
       {data ? (
         <Container>
-          {" "}
-          <Header />{" "}
+          <Header />
           <CurrentPostCard
             id={data.id}
             data={data.created_at}
@@ -22,8 +20,8 @@ function CurrentPost() {
             img={data.main_image_url}
             title={data.title}
             body={data.body}
-          />{" "}
-          <PostCardRender />{" "}
+          />
+          <PostCardRender />
         </Container>
       ) : (
         <b>Loading...</b>

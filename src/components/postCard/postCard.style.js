@@ -52,3 +52,15 @@ export const PostItemLink = styled(Link)`
   text-decoration: none;
   color: #777777;
 `
+export const EditPost = styled(Link)`
+  display: block;
+  margin: 10px 0;
+  width: 70px;
+  padding: 12px;
+  text-decoration: none;
+  text-transform: capitalize;
+  border: 2px solid #000;
+  border-radius: 10px;
+  font-weight: bold;
+  color: #000;
+`
