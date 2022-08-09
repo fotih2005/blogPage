@@ -41,7 +41,7 @@ function Main() {
               rutrum augue erat ac eros. Cras ultricies mattis convallis.
             </SiteMainDesc>
             <ExploreWrapper>
-              <Explore>explore me</Explore>
+              <Explore to={"/explore"}>explore me</Explore>
               <ArrowIcon>&gt;</ArrowIcon>
             </ExploreWrapper>
             <AddNewPost to={"/add"}>Add New Post</AddNewPost>

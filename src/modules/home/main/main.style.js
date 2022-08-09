@@ -36,10 +36,12 @@ export const ExploreWrapper = styled.span`
     text-decoration: none;
     color: #474747;
 `
-export const Explore = styled.p`
+export const Explore = styled(Link)`
     margin: 0;
     margin-right: 10px;
     text-transform: uppercase;
+    text-decoration: none;
+    color: #474747;
 `
 export const ArrowIcon = styled.span`
     padding: 3px 5px;
