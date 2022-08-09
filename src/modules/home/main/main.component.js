@@ -1,5 +1,7 @@
-import { Link } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { useDispatch } from "react-redux";
 import PostCardRender from "../../../components/postCard/postCardRender";
+import { getCard } from "../../../store/reducer/cardsSlice";
 import {
   AddNewPost,
   ArrowIcon,
@@ -18,6 +20,18 @@ import {
 } from "./main.style";
 
 function Main() {
+
+  const dispatch = useDispatch()
+
+
+  const [num, setCount] = useState(0)
+  
+  useEffect(() => {
+    dispatch(getCard({num}))
+  }, [num])
+
+
+
   return (
     <>
       <SiteMain>
@@ -38,11 +52,11 @@ function Main() {
           <SiteMainListWrapper>
             <ListTitle>Recent Posts</ListTitle>
             <PostsList>
-              <PostCardRender/>
+              <PostCardRender/> 
             </PostsList>
             <PagesWrapper>
-              <PagesBtn>&lt;</PagesBtn>
-              <PagesBtn>&gt;</PagesBtn>
+              <PagesBtn onClick={() => setCount(num + 1)}>&lt;</PagesBtn>
+              <PagesBtn onClick={() => setCount(num - 1)}>&gt;</PagesBtn>
             </PagesWrapper>
           </SiteMainListWrapper>
         </SiteMainWrapper>

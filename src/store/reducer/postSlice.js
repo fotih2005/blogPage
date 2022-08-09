@@ -2,8 +2,8 @@ import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import useFetch from "../../hooks/useFetch";
 
 export const getPosts = createAsyncThunk("posts/getPosts",  () => {
-    let nmadr = useFetch("https://n36-blog.herokuapp.com/categories")
-    return nmadr
+    let res = useFetch("https://n36-blog.herokuapp.com/categories")
+    return res
 });
 
 const postSlice = createSlice({

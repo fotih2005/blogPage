@@ -19,7 +19,7 @@ function App() {
     }
   return (
     <>
-        <Routes>
+       <Routes>
           <Route path="*" element={<Home />} />
           <Route path="/category/:category" element={<FilterCategories />} />
           <Route path="/post/:post" element={<CurrentPost />} />
