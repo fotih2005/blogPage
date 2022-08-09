@@ -38,7 +38,7 @@ export const SiteNavLink = styled(Link)`
     color: #9a9a9a;
 `
 export const SearchInput = styled.input`
-    padding: 11px 14px;
+    padding: 12px 14px;
     width: 210px;
     height: 100%;
     border: none;
@@ -46,9 +46,10 @@ export const SearchInput = styled.input`
     background-color: #f4f4f4;
 `
 export const SearchIcon = styled.button`
-    padding: 10.5px 12px;
+    padding: 10px 12px;
     height: 100%;
     margin-left: -7px;
     border-radius: 5px;
+    border: none;
     background-color: #ffba9d;
 `

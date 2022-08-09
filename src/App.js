@@ -13,10 +13,9 @@ function App() {
   const dispatch = useDispatch()
   dispatch(getPosts())
   const token = localStorage.getItem("token");
-
-    if (!token) {
-      return <Login />;
-    }
+      if (!token) {
+        return <Login />;
+      }
   return (
     <>
        <Routes>

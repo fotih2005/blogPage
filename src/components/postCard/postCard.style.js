@@ -55,7 +55,7 @@ export const PostItemLink = styled(Link)`
 export const EditPost = styled(Link)`
   display: block;
   margin: 10px 0;
-  width: 70px;
+  width: 90px;
   padding: 12px;
   text-decoration: none;
   text-transform: capitalize;
@@ -63,4 +63,9 @@ export const EditPost = styled(Link)`
   border-radius: 10px;
   font-weight: bold;
   color: #000;
+`
+export const NoPost = styled.b`
+  display: block;
+  text-align: center;
+  font-size: 50px;
 `

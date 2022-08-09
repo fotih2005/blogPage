@@ -52,7 +52,7 @@ function Main() {
               <PostCardRender />
             </PostsList>
             <PagesWrapper>
-              <PagesBtn onClick={() => setCount(num - 1)}>&lt;</PagesBtn>
+              <PagesBtn disabled={num === 0} onClick={() => setCount(num - 1)}>&lt;</PagesBtn>
               <PagesBtn onClick={() => setCount(num + 1)}>&gt;</PagesBtn>
             </PagesWrapper>
           </SiteMainListWrapper>

@@ -1,5 +1,6 @@
 import { useSelector } from "react-redux";
 import PostCard from "./postCard.component";
+import { NoPost } from "./postCard.style";
 
 function PostCardRender() {
   let cards = useSelector((state) => state.cards.cards.posts);
@@ -17,17 +18,23 @@ function PostCardRender() {
     );
   }
 
+  if(cards && cards.length === 0){
+    return <NoPost>No posts left</NoPost>
+  }
+
   return (
     <>
-      {cards?.map((post) => (
-        <PostCard
-          key={post.id}
-          id={post.id}
-          title={post.title}
-          category={post.category_name}
-          time={post.created_time}
-        />
-      ))}
+      {
+        cards?.map((post) => (
+          <PostCard
+            key={post.id}
+            id={post.id}
+            title={post.title}
+            category={post.category_name}
+            time={post.created_time}
+          />
+        ))
+      }
     </>
   );
 }

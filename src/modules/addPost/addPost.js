@@ -6,9 +6,6 @@ function AddPost () {
     const [title, setTitle] = useState([])
     const [category, setCategory] = useState([])
     const [text, setText] = useState([])
-    console.log(title);
-    console.log(category);
-    console.log(text);
 
 
     async function AddNewPost (event) {
@@ -32,7 +29,6 @@ function AddPost () {
             throw new Error("Whoops!")
         }
         res = await res.json()
-        console.log(res);
     }
 
     return <>

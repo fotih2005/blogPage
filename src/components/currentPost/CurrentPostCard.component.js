@@ -15,7 +15,6 @@ import {
 
 function CurrentPostCard(props) {
   const param = useParams();
-  console.log(param);
 
   async function DeletePost () {
     let res = await fetch(

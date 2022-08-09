@@ -29,6 +29,7 @@ function Login() {
             throw new Error("xato")
         }
         setToken({loading: null})
+        window.location.reload(false);
     }
 
 
