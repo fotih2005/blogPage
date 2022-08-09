@@ -1,3 +1,6 @@
+import { useEffect, useState } from "react";
+import { useDispatch } from "react-redux";
+import { getSearch } from "../../store/reducer/searchSlice";
 import {
   HeaderLogoWrapper,
   HeaderWrapper,
@@ -10,6 +13,15 @@ import {
 import NavCardsRender from "./navCard/navCardRender";
 
 function Header() {
+  const dispatch = useDispatch()
+  const [title, setTitle] = useState(null)
+
+  useEffect(() => {
+    dispatch(getSearch({title}))
+    // eslint-disable-next-line
+  }, [title])  
+
+
   return (
     <>
       <SiteHeader>
@@ -41,8 +53,7 @@ function Header() {
               </NavList>
             </SiteNav>
             <div>
-              <form>
-              <SearchInput type="text" placeholder="Search"/>
+              <SearchInput type="text" placeholder="Search" onChange={e => setTitle(e.target.value)}/>
               <SearchIcon>
                 <svg
                   width={16}
@@ -59,7 +70,6 @@ function Header() {
                   />
                 </svg>
               </SearchIcon>
-              </form>
             </div>
           </HeaderWrapper>
         </section>

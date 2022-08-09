@@ -20,17 +20,14 @@ import {
 } from "./main.style";
 
 function Main() {
+  const dispatch = useDispatch();
 
-  const dispatch = useDispatch()
+  const [num, setCount] = useState(0);
 
-
-  const [num, setCount] = useState(0)
-  
   useEffect(() => {
-    dispatch(getCard({num}))
-  }, [num])
-
-
+    dispatch(getCard({ num }));
+    // eslint-disable-next-line
+  }, [num]);
 
   return (
     <>
@@ -52,11 +49,11 @@ function Main() {
           <SiteMainListWrapper>
             <ListTitle>Recent Posts</ListTitle>
             <PostsList>
-              <PostCardRender/> 
+              <PostCardRender />
             </PostsList>
             <PagesWrapper>
-              <PagesBtn onClick={() => setCount(num + 1)}>&lt;</PagesBtn>
-              <PagesBtn onClick={() => setCount(num - 1)}>&gt;</PagesBtn>
+              <PagesBtn onClick={() => setCount(num - 1)}>&lt;</PagesBtn>
+              <PagesBtn onClick={() => setCount(num + 1)}>&gt;</PagesBtn>
             </PagesWrapper>
           </SiteMainListWrapper>
         </SiteMainWrapper>
