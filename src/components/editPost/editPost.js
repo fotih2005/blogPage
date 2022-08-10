@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { useParams } from "react-router-dom";
-import useFetch from "../../hooks/useFetch";
 import {
   Cancel,
   EditForm,
@@ -15,10 +14,14 @@ function Edit() {
   const [title, setTitle] = useState([]);
   const [category, setCategory] = useState([]);
   const [text, setText] = useState([]);
-
-  const data = useFetch(`https://n36-blog.herokuapp.com/posts/${param.id}`);
+  const [error, setError] = useState({
+    error: false,
+    loading: false,
+    sucsesful: false,
+  });
 
   async function editPost(e) {
+    setError({ loading: "loading" });
     e.preventDefault();
     let res = await fetch(`https://n36-blog.herokuapp.com/posts/${param.id}`, {
       method: "PUT",
@@ -35,16 +38,21 @@ function Edit() {
         body: text,
       }),
     });
-
+    if (!res.ok) {
+      setError({ error: "error", loading: false, sucsesful: false });
+      throw new Error("error");
+    }
     res = await res.json();
     console.log(res);
+    setError({ loading: false, sucsesful: "post qoshildi" });
   }
-
-  console.log(data);
 
   return (
     <>
       <FormWrapper>
+        {error.loading && <b>Loading...</b>}
+        {error.error && <b>Error</b>}
+        {error.sucsesful && <b>The post has been updated</b>}
         <EditForm onSubmit={editPost}>
           <EditPostTitle>Edit Post</EditPostTitle>
           <EditInput
