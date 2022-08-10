@@ -2,7 +2,7 @@ import { useState } from "react"
 import { AddForm, AddInput, AddPostBtn, AddPostTitle, Cancel, ErrorMessage, FormWrapper } from "./addPost.style"
 
 function AddPost () {
-    const [error, setError] = useState({error: null})
+    const [error, setError] = useState({error: null, successfull: false})
     const [title, setTitle] = useState([])
     const [category, setCategory] = useState([])
     const [text, setText] = useState([])
@@ -29,12 +29,16 @@ function AddPost () {
             throw new Error("Whoops!")
         }
         res = await res.json()
+        setError({successfull: "post qoshildi"})
     }
 
     return <>
         <FormWrapper>
         {
             error.error && <ErrorMessage>Error. Post not added!</ErrorMessage>
+        }
+        {
+            error.successfull && <b>The post has been updated</b>
         }
             <AddForm onSubmit={AddNewPost}>
                 <AddPostTitle>Add New Post</AddPostTitle>
