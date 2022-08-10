@@ -9,7 +9,6 @@ import Home from "./modules/home/home.component";
 import Login from "./modules/login/login";
 import { getPosts } from "./store/reducer/postSlice";
 
-
 function App() {
   const dispatch = useDispatch()
   dispatch(getPosts())

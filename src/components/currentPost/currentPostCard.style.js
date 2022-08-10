@@ -60,11 +60,11 @@ export const Delete = styled.button`
   font-weight: bold;
   color: #fff;
   background-color: red;
-`
+`;
 export const Loading = styled.b`
   display: block;
   text-align: center;
   margin-top: 200px;
   margin-bottom: 200px;
   font-size: 50px;
-`
+`;

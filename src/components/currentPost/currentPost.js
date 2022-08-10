@@ -28,7 +28,7 @@ function CurrentPost() {
       ) : (
         <Loading>Loading...</Loading>
       )}
-      <Footer/>
+      <Footer />
     </>
   );
 }

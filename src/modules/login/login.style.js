@@ -25,7 +25,7 @@ export const LoginForm = styled.form`
 `
 export const InputLogin = styled.input`
     display: block;
-    width: 100%;
+    width: 300px;
     margin-bottom: 24px;
     padding: 12px 15px;
     border: none;
@@ -34,7 +34,7 @@ export const InputLogin = styled.input`
 `
 export const FormBtn = styled.button`
     display: block;
-    width: 100%;
+    width: 330px;
     padding: 12px 15px;
     border: none;
     border-radius: 5px;
