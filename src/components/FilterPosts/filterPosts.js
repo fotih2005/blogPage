@@ -6,8 +6,8 @@ function FilterPosts() {
   let param = useParams();
 
   const [data, setData] = useState([]);
-
-  useEffect(() => {
+  console.log(param);
+   useEffect(() => {
     (async function () {
       let res = await fetch(
         "https://n36-blog.herokuapp.com/posts/bycategory?page=1",
@@ -20,9 +20,12 @@ function FilterPosts() {
         }
       );
       let data = await res.json();
+      console.log(data);
       setData(data.posts);
     })();
   }, [param]);
+
+  console.log(data);
 
   return (
     <>
